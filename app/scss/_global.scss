@@ -1,0 +1,36 @@
+body {
+  letter-spacing: 0.04em;
+  font-family: Lato;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+p {
+  line-height: 1.8em;
+}
+
+h1, h2, h3, h4, h5, h6, nav {
+  font-family: League Spartan;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.button {
+  text-transform: uppercase;
+  font-family: League Spartan;
+  font-weight: bold;
+  color: rgb(56,0,250);
+  border: 2px solid rgb(56,0,250);
+  background-color: white;
+  border-radius: 5px;
+  padding: 8px 15px;
+  padding-top: 12px;
+  margin: 0;
+  display: inline-block;
+}

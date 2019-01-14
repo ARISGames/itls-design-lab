@@ -1,0 +1,42 @@
+.get-started {
+  padding: 100px;
+  color: rgb(56,0,250);
+  h2 {
+    text-align: center;
+  }
+  /*
+    styled `ol` numbers using technique from
+    https://www.456bereastreet.com/archive/201105/styling_ordered_list_numbers/
+  */
+  ol {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    counter-reset: li; /* Initiate a counter */
+    li {
+      border: 2px solid rgb(56,0,250);
+      padding: 15px;
+      border-radius: 10px;
+      margin: 25px;
+      h3 {
+        color: rgb(38,0,167);
+      }
+      position: relative; /* Create a positioning context */
+      list-style: none;
+      &:before {
+        content: "0" counter(li); /* Use the counter as content */
+        counter-increment: li; /* Increment the counter by 1 */
+        position: absolute;
+        background-color: white;
+        font-family: League Spartan;
+        color: rgb(248,110,159);
+        font-size: 60px;
+        left: -23px;
+        top: -27px;
+        padding-right: 15px;
+      }
+      padding-top: 40px;
+    }
+  }
+}
