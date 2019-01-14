@@ -1,9 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ITLS Design Lab</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+<title>ITLS Design Lab</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+<script type="text/javascript">
+
+document.addEventListener('DOMContentLoaded', function(){
+  // Set up buttons that expand the equipment sections
+  var sections = Array.from(document.getElementById('equipment-sections').children);
+  Array.from(document.getElementById('equipment-buttons').children).forEach(function(button, i){
+    button.addEventListener('click', function(e){
+      e.stopPropagation();
+      e.preventDefault();
+      sections.forEach(function(section, j){
+        if (i === j) {
+          section.classList.add('equipment-show');
+        } else {
+          section.classList.remove('equipment-show');
+        }
+      });
+    });
+  });
+})
+
+function equipmentClose(section) {
+  section.closest('.equipment-section').classList.remove('equipment-show');
+}
+
+</script>
 </head>
 <body>
 
@@ -12,12 +37,12 @@
     <img src="img/mark-small.png" alt="Design Lab" style="width: 91px;, height: 44px;">
   </div>
   <div>
-    <a href="#">Getting Started</a>
-    <a href="#">Lab Uses</a>
-    <a href="#">Equipment</a>
-    <a href="#">Event Calendar</a>
-    <a href="#">Reservations</a>
-    <a href="#">Community</a>
+    <a href="#get-started">Getting Started</a>
+    <a href="#lab-uses">Lab Uses</a>
+    <a href="#equipment">Equipment</a>
+    <a href="#calendar">Event Calendar</a>
+    <a href="#reservations">Reservations</a>
+    <a href="#community">Community</a>
   </div>
 </nav>
 
@@ -37,7 +62,7 @@
   </div>
 </header>
 
-<section class="get-started">
+<section class="get-started" id="get-started">
   <h2>It's easy to get started!</h2>
   <ol>
     <li>
@@ -61,7 +86,7 @@
   </ol>
 </section>
 
-<section class="what-happens">
+<section class="what-happens" id="lab-uses">
   <div class="what-happens-inner">
     <div>
       <h2>What happens in the lab?</h2>
@@ -86,9 +111,116 @@
   </div>
 </section>
 
-<section>
+<section class="generic-section" id="equipment">
   <h2>Equipment & Gear</h2>
+  <div id="equipment-buttons">
+    <a href="#">
+      <img src="img/icon-3dprinting.png" style="width: 78px; height: 74px;">
+      <span>3D Printers</span>
+    </a>
+    <a href="#">
+      <img src="img/icon-vr.png" style="width: 102px; height: 69px;">
+      <span>VR</span>
+    </a>
+    <a href="#">
+      <img src="img/icon-laser.png" style="width: 78px; height: 75px;">
+      <span>Laser Cutter</span>
+    </a>
+    <a href="#">
+      <img src="img/icon-materials.png" style="width: 99px; height: 99px;">
+      <span>Materials</span>
+    </a>
+    <a href="#">
+      <img src="img/icon-sewing.png" style="width: 93px; height: 80px;">
+      <span>Sewing Machines</span>
+    </a>
+    <a href="#">
+      <img src="img/icon-sundries.png" style="width: 86px; height: 88px;">
+      <span>Sundries</span>
+    </a>
+  </div>
+  <div id="equipment-sections">
+    <div class="equipment-section">
+      <div class="equipment-header">
+        <img src="img/icon-3dprinting.png" style="width: 78px; height: 74px;">
+        <h3>3D Printers</h3>
+        <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
+      </div>
+      <hr>
+    </div>
+    <div class="equipment-section">
+      <div class="equipment-header">
+        <img src="img/icon-vr.png" style="width: 102px; height: 69px;">
+        <h3>VR</h3>
+        <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
+      </div>
+      <hr>
+    </div>
+    <div class="equipment-section">
+      <div class="equipment-header">
+        <img src="img/icon-laser.png" style="width: 78px; height: 75px;">
+        <h3>Laser Cutter</h3>
+        <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
+      </div>
+      <hr>
+    </div>
+    <div class="equipment-section">
+      <div class="equipment-header">
+        <img src="img/icon-materials.png" style="width: 99px; height: 99px;">
+        <h3>Materials</h3>
+        <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
+      </div>
+      <hr>
+    </div>
+    <div class="equipment-section">
+      <div class="equipment-header">
+        <img src="img/icon-sewing.png" style="width: 93px; height: 80px;">
+        <h3>Sewing Machines</h3>
+        <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
+      </div>
+      <hr>
+    </div>
+    <div class="equipment-section">
+      <div class="equipment-header">
+        <img src="img/icon-sundries.png" style="width: 86px; height: 88px;">
+        <h3>Sundries</h3>
+        <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
+      </div>
+      <hr>
+    </div>
+  </div>
 </section>
+
+<section class="generic-section" id="calendar">
+  <h2>Lab Calendar</h2>
+</section>
+
+<section class="generic-section" id="community">
+  <h2>Community</h2>
+</section>
+
+<section class="generic-section">
+  <h2>Instagram</h2>
+</section>
+
+<hr>
+
+<footer class="footer">
+  <p>
+    <img src="img/embelishment.png" style="width: 246px; height: 176px;">
+  </p>
+  <p>
+    <a href="#get-started">Getting Started</a>
+    <a href="#lab-uses">Lab Uses</a>
+    <a href="#equipment">Equipment</a>
+    <a href="#calendar">Event Calendar</a>
+    <a href="#reservations">Reservations</a>
+    <a href="#community">Community</a>
+  </p>
+  <p class="copyright">
+    Copyright © 2019 Utah State University
+  </p>
+</footer>
 
 </body>
 </html>

@@ -1,0 +1,38 @@
+#equipment-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  font-size: 13px;
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 10px rgba(0,0,0,0.2);
+    margin: 20px;
+    padding: 10px;
+    img, span {
+      margin: 10px;
+    }
+  }
+}
+
+.equipment-section {
+  max-height: 0;
+  overflow: hidden;
+  &.equipment-show {
+    max-height: none;
+  }
+  .equipment-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    img, h3, a {
+      margin: 15px;
+    }
+    h3 {
+      flex: 1;
+    }
+  }
+}
