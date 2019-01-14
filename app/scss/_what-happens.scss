@@ -1,0 +1,55 @@
+.what-happens {
+  background-image: url('../img/pattern.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 75px;
+  .what-happens-inner {
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    color: rgb(56,0,250);
+    padding: 50px;
+    h2 {
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+    li {
+      list-style-type: none;
+      &:before {
+        /* Unicode bullet symbol */
+        content: '\2022';
+        color: rgb(248,123,153);
+        padding-right: 0.2em;
+        font-size: 30px;
+      }
+    }
+    hr {
+      border: 2px solid rgb(238,237,247);
+      margin: 50px 0;
+    }
+    .lab-manager {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 70px;
+        height: 70px;
+        border-radius: 999px;
+        background-color: magenta;
+        margin: 15px;
+      }
+      p {
+        flex: 1;
+        color: rgb(10,3,30);
+        text-align: left;
+        max-width: 500px;
+        margin: 15px;
+        font-size: 15px;
+        a {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
