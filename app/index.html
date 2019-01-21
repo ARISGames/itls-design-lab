@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', function(){
       e.preventDefault();
       sections.forEach(function(section, j){
         if (i === j) {
-          section.classList.add('equipment-show');
+          section.children[0].classList.add('equipment-show');
         } else {
-          section.classList.remove('equipment-show');
+          section.children[0].classList.remove('equipment-show');
         }
       });
     });
@@ -49,7 +49,7 @@ function equipmentClose(section) {
 <header class="hero">
   <div class="hero-inner">
     <h1>
-      <img src="img/mark-large.png" alt="ITLS Design Lab" style="width: 653px; height: 351px;">
+      <img src="img/mark-large.png" alt="ITLS Design Lab" class="hero-logo">
     </h1>
     <div>
       <p>
@@ -71,12 +71,14 @@ function equipmentClose(section) {
         Create professional-quality, high-resolution prototypes and complex models, 100-micron layer resolution and a 6,717 cm<sup>3</sup> build volume.
       </p>
     </li>
+    <hr>
     <li>
       <h3>Request Materials</h3>
       <p>
         Create professional-quality, high-resolution prototypes and complex models, 100-micron layer resolution and a 6,717 cm<sup>3</sup> build volume.
       </p>
     </li>
+    <hr>
     <li>
       <h3>Get Making!</h3>
       <p>
@@ -140,53 +142,65 @@ function equipmentClose(section) {
     </a>
   </div>
   <div id="equipment-sections">
-    <div class="equipment-section">
-      <div class="equipment-header">
-        <img src="img/icon-3dprinting.png" style="width: 78px; height: 74px;">
-        <h3>3D Printers</h3>
-        <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
+    <div class="equipment-wrap">
+      <div class="equipment-section">
+        <div class="equipment-header">
+          <img src="img/icon-3dprinting.png" style="width: 78px; height: 74px;">
+          <h3>3D Printers</h3>
+          <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
+        </div>
+        <hr>
       </div>
-      <hr>
     </div>
-    <div class="equipment-section">
-      <div class="equipment-header">
-        <img src="img/icon-vr.png" style="width: 102px; height: 69px;">
-        <h3>VR</h3>
-        <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
+    <div class="equipment-wrap">
+      <div class="equipment-section">
+        <div class="equipment-header">
+          <img src="img/icon-vr.png" style="width: 102px; height: 69px;">
+          <h3>VR</h3>
+          <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
+        </div>
+        <hr>
       </div>
-      <hr>
     </div>
-    <div class="equipment-section">
-      <div class="equipment-header">
-        <img src="img/icon-laser.png" style="width: 78px; height: 75px;">
-        <h3>Laser Cutter</h3>
-        <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
+    <div class="equipment-wrap">
+      <div class="equipment-section">
+        <div class="equipment-header">
+          <img src="img/icon-laser.png" style="width: 78px; height: 75px;">
+          <h3>Laser Cutter</h3>
+          <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
+        </div>
+        <hr>
       </div>
-      <hr>
     </div>
-    <div class="equipment-section">
-      <div class="equipment-header">
-        <img src="img/icon-materials.png" style="width: 99px; height: 99px;">
-        <h3>Materials</h3>
-        <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
+    <div class="equipment-wrap">
+      <div class="equipment-section">
+        <div class="equipment-header">
+          <img src="img/icon-materials.png" style="width: 99px; height: 99px;">
+          <h3>Materials</h3>
+          <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
+        </div>
+        <hr>
       </div>
-      <hr>
     </div>
-    <div class="equipment-section">
-      <div class="equipment-header">
-        <img src="img/icon-sewing.png" style="width: 93px; height: 80px;">
-        <h3>Sewing Machines</h3>
-        <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
+    <div class="equipment-wrap">
+      <div class="equipment-section">
+        <div class="equipment-header">
+          <img src="img/icon-sewing.png" style="width: 93px; height: 80px;">
+          <h3>Sewing Machines</h3>
+          <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
+        </div>
+        <hr>
       </div>
-      <hr>
     </div>
-    <div class="equipment-section">
-      <div class="equipment-header">
-        <img src="img/icon-sundries.png" style="width: 86px; height: 88px;">
-        <h3>Sundries</h3>
-        <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
+    <div class="equipment-wrap">
+      <div class="equipment-section">
+        <div class="equipment-header">
+          <img src="img/icon-sundries.png" style="width: 86px; height: 88px;">
+          <h3>Sundries</h3>
+          <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
+        </div>
+        <hr>
       </div>
-      <hr>
     </div>
   </div>
 </section>

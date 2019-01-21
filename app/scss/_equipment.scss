@@ -18,11 +18,15 @@
   }
 }
 
-.equipment-section {
-  max-height: 0;
+.equipment-wrap {
   overflow: hidden;
+}
+
+.equipment-section {
+  margin-top: -100%;
+  transition: 0.2s margin-top;
   &.equipment-show {
-    max-height: none;
+    margin-top: 0;
   }
   .equipment-header {
     display: flex;
