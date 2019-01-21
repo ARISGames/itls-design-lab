@@ -28,21 +28,38 @@ function equipmentClose(section) {
   section.closest('.equipment-section').classList.remove('equipment-show');
 }
 
+function showMobileMenu() {
+  document.body.classList.add('mobile-menu-open');
+}
+
+function hideMobileMenu() {
+  document.body.classList.remove('mobile-menu-open');
+}
+
 </script>
 </head>
 <body>
 
-<nav class="desktop-nav">
-  <div>
-    <img src="img/mark-small.png" alt="Design Lab" style="width: 91px;, height: 44px;">
+<div class="mobile-menu-button">
+  <a href="#" onclick="showMobileMenu(); return false;">
+    <img src="img/button-menu.png">
+  </a>
+</div>
+
+<nav id="menu">
+  <div class="menu-top">
+    <img src="img/mark-small.png" alt="Design Lab" style="width: 91px; height: 44px;">
+    <a href="#" class="mobile-menu-close" onclick="hideMobileMenu(); return false;">
+      <img src="img/button-close.png">
+    </a>
   </div>
-  <div>
-    <a href="#get-started">Getting Started</a>
-    <a href="#lab-uses">Lab Uses</a>
-    <a href="#equipment">Equipment</a>
-    <a href="#calendar">Event Calendar</a>
-    <a href="#reservations">Reservations</a>
-    <a href="#community">Community</a>
+  <div class="menu-options">
+    <a href="#get-started" onclick="hideMobileMenu();">Getting Started</a>
+    <a href="#lab-uses" onclick="hideMobileMenu();">Lab Uses</a>
+    <a href="#equipment" onclick="hideMobileMenu();">Equipment</a>
+    <a href="#calendar" onclick="hideMobileMenu();">Event Calendar</a>
+    <a href="#reservations" onclick="hideMobileMenu();">Reservations</a>
+    <a href="#community" onclick="hideMobileMenu();">Community</a>
   </div>
 </nav>
 
