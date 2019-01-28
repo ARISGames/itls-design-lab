@@ -1,3 +1,5 @@
+@import "colors";
+
 .what-happens {
   background-image: url('../img/pattern.jpg');
   background-size: cover;
@@ -7,7 +9,7 @@
     background-color: white;
     text-align: center;
     border-radius: 10px;
-    color: rgb(56,0,250);
+    color: $design-blue;
     padding: 50px;
     h2 {
       text-transform: uppercase;
