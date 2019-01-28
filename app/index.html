@@ -22,6 +22,10 @@ document.addEventListener('DOMContentLoaded', function(){
       button.addEventListener('click', function(e){
         e.stopPropagation();
         e.preventDefault();
+        if (thisButtons[i].classList.contains('equipment-button-on')) {
+          equipmentClose(thisSections[i].children[0]);
+          return;
+        }
         thisSections.forEach(function(section, j){
           if (i === j) {
             section.children[0].classList.add('equipment-show');
@@ -214,16 +218,46 @@ function hideMobileMenu() {
             <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
           </div>
           <hr>
+          <article class="equipment-item">
+            <div class="equipment-item-text">
+              <h4>MakerBot Replicator 2</h4>
+              <h5>Desktop 3D Printer</h5>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis purus eget tortor interdum consequat. Aliquam metus orci, feugiat eget tortor vitae, bibendum accumsan erat. Suspendisse id leo dignissim sapien bibendum venenatis a quis ipsum. In hac habitasse platea dictumst. Aliquam imperdiet, leo non scelerisque elementum, risus turpis placerat purus, in tempor purus magna id tellus. In nec nisl libero.
+              </p>
+            </div>
+            <img src="img/embelishment.png">
+          </article>
         </div>
       </div>
       <div class="equipment-wrap">
         <div class="equipment-section">
           <div class="equipment-header">
             <img class="equipment-header-icon" src="img/icon-vr.png">
-            <h3>VR</h3>
+            <h3>Virtual Reality Rigs</h3>
             <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
           </div>
           <hr>
+          <article class="equipment-item">
+            <div class="equipment-item-text">
+              <h4>HTC Vive</h4>
+              <h5>Virtual Reality Rig</h5>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis purus eget tortor interdum consequat. Aliquam metus orci, feugiat eget tortor vitae, bibendum accumsan erat. Suspendisse id leo dignissim sapien bibendum venenatis a quis ipsum. In hac habitasse platea dictumst. Aliquam imperdiet, leo non scelerisque elementum, risus turpis placerat purus, in tempor purus magna id tellus. In nec nisl libero.
+              </p>
+            </div>
+            <img src="img/embelishment.png">
+          </article>
+          <article class="equipment-item">
+            <div class="equipment-item-text">
+              <h4>Oculus Rift</h4>
+              <h5>Virtual Reality Rig</h5>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis purus eget tortor interdum consequat. Aliquam metus orci, feugiat eget tortor vitae, bibendum accumsan erat. Suspendisse id leo dignissim sapien bibendum venenatis a quis ipsum. In hac habitasse platea dictumst. Aliquam imperdiet, leo non scelerisque elementum, risus turpis placerat purus, in tempor purus magna id tellus. In nec nisl libero.
+              </p>
+            </div>
+            <img src="img/embelishment.png">
+          </article>
         </div>
       </div>
       <div class="equipment-wrap">
@@ -281,14 +315,11 @@ function hideMobileMenu() {
 
 <section class="generic-section" id="calendar">
   <h2>Lab Calendar</h2>
+  <iframe src="https://teamup.com/ks5dd9755b94b9ba78" frameborder="0" height="600px"></iframe>
 </section>
 
 <section class="generic-section" id="community">
   <h2>Community</h2>
-</section>
-
-<section class="generic-section">
-  <h2>Instagram</h2>
 </section>
 
 <hr>

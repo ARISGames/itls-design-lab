@@ -60,15 +60,38 @@
   }
 }
 
+/*
+Collapsable technique from
+https://stackoverflow.com/a/43965099/509936
+*/
+
 .equipment-wrap {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
+  &:after {
+    content: '';
+    height: 50px;
+    transition: height 0.3s linear, max-height 0s 0.3s linear;
+    max-height: 0px;
+  }
 }
 
 .equipment-section {
-  margin-top: -100%;
-  transition: 0.2s margin-top;
-  &.equipment-show {
-    margin-top: 0;
+  transition: margin-bottom 0.3s cubic-bezier(0, 0, 0, 1);
+  margin-bottom: 0;
+  max-height: 1000000px;
+  &:not(.equipment-show) {
+    margin-bottom: -2000px;
+    transition: margin-bottom 0.3s cubic-bezier(1, 0, 1, 1),
+                visibility 0s 0.3s, max-height 0s 0.3s;
+    visibility: hidden;
+    max-height: 0;
+    &:after {
+      height: 0;
+      transition: height 0.3s linear;
+      max-height: 50px;
+    }
   }
   .equipment-header {
     display: flex;
@@ -79,11 +102,23 @@
     }
     h3 {
       flex: 1;
+      text-align: left;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgb(56,0,250);
+      padding-left: 2vw;
     }
     .equipment-header-icon {
       width: 80px;
     }
   }
+  hr {
+    border: none;
+    background-color: rgb(237,232,255);
+    height: 7px;
+  }
+  padding-left: 8vw;
+  padding-right: 8vw;
 }
 
 .equipment-grid {
@@ -127,6 +162,54 @@
     #equipment-sections-R {
       grid-column: 1 / 2;
       grid-row: 4 / 5;
+    }
+  }
+}
+
+.equipment-item {
+  display: flex;
+  .equipment-item-text {
+    margin: 10px;
+    text-align: left;
+    h4 {
+      margin: 10px;
+      color: rgb(56,0,250);
+      font-size: 18px;
+    }
+    h5 {
+      margin: 10px;
+      color: rgb(151,157,177);
+      font-size: 13px;
+    }
+    p {
+      margin: 10px;
+    }
+  }
+  img {
+    margin: 10px;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  .equipment-item {
+    flex-direction: row;
+    .equipment-item-text {
+      flex: 1;
+      padding-right: 8vw;
+    }
+    img {
+      max-height: 250px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .equipment-item {
+    flex-direction: column-reverse;
+    align-items: center;
+    img {
+      width: 100%;
+      max-width: 400px;
     }
   }
 }
