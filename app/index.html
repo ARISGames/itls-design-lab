@@ -9,12 +9,16 @@
 
 document.addEventListener('DOMContentLoaded', function(){
   // Set up buttons that expand the equipment sections
+  var buttonsL = Array.from(document.getElementById('equipment-buttons-L').children);
+  var buttonsR = Array.from(document.getElementById('equipment-buttons-R').children);
   var sectionsL = Array.from(document.getElementById('equipment-sections-L').children);
   var sectionsR = Array.from(document.getElementById('equipment-sections-R').children);
   ['L', 'R'].forEach(function(half){
     var thisSections = half === 'L' ? sectionsL : sectionsR;
     var thatSections = half === 'L' ? sectionsR : sectionsL;
-    Array.from(document.getElementById('equipment-buttons-'+half).children).forEach(function(button, i){
+    var thisButtons = half === 'L' ? buttonsL : buttonsR;
+    var thatButtons = half === 'L' ? buttonsR : buttonsL;
+    thisButtons.forEach(function(button, i){
       button.addEventListener('click', function(e){
         e.stopPropagation();
         e.preventDefault();
@@ -28,6 +32,16 @@ document.addEventListener('DOMContentLoaded', function(){
         thatSections.forEach(function(section){
           section.children[0].classList.remove('equipment-show');
         });
+        thisButtons.forEach(function(button, j){
+          if (i === j) {
+            button.classList.add('equipment-button-on');
+          } else {
+            button.classList.remove('equipment-button-on');
+          }
+        });
+        thatButtons.forEach(function(button){
+          button.classList.remove('equipment-button-on');
+        });
       });
     });
   });
@@ -35,6 +49,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
 function equipmentClose(section) {
   section.closest('.equipment-section').classList.remove('equipment-show');
+  Array.from(document.getElementsByClassName('equipment-button')).forEach(function(button){
+    button.classList.remove('equipment-button-on');
+  });
 }
 
 function showMobileMenu() {
@@ -143,38 +160,56 @@ function hideMobileMenu() {
   <h2>Equipment & Gear</h2>
   <div class="equipment-grid">
     <div id="equipment-buttons-L" class="equipment-buttons">
-      <a href="#">
-        <img src="img/icon-3dprinting.png" style="width: 78px; height: 74px;">
+      <a class="equipment-button" href="#">
+        <div class="button-icon">
+          <img src="img/icon-3dprinting.png">
+        </div>
         <span>3D Printers</span>
+        <div class="equipment-button-arrow"></div>
       </a>
-      <a href="#">
-        <img src="img/icon-vr.png" style="width: 102px; height: 69px;">
+      <a class="equipment-button" href="#">
+        <div class="button-icon">
+          <img src="img/icon-vr.png">
+        </div>
         <span>VR</span>
+        <div class="equipment-button-arrow"></div>
       </a>
-      <a href="#">
-        <img src="img/icon-laser.png" style="width: 78px; height: 75px;">
+      <a class="equipment-button" href="#">
+        <div class="button-icon">
+          <img src="img/icon-laser.png">
+        </div>
         <span>Laser Cutter</span>
+        <div class="equipment-button-arrow"></div>
       </a>
     </div>
     <div id="equipment-buttons-R" class="equipment-buttons">
-      <a href="#">
-        <img src="img/icon-materials.png" style="width: 99px; height: 99px;">
+      <a class="equipment-button" href="#">
+        <div class="button-icon">
+          <img src="img/icon-materials.png">
+        </div>
         <span>Materials</span>
+        <div class="equipment-button-arrow"></div>
       </a>
-      <a href="#">
-        <img src="img/icon-sewing.png" style="width: 93px; height: 80px;">
+      <a class="equipment-button" href="#">
+        <div class="button-icon">
+          <img src="img/icon-sewing.png">
+        </div>
         <span>Sewing Machines</span>
+        <div class="equipment-button-arrow"></div>
       </a>
-      <a href="#">
-        <img src="img/icon-sundries.png" style="width: 86px; height: 88px;">
+      <a class="equipment-button" href="#">
+        <div class="button-icon">
+          <img src="img/icon-sundries.png">
+        </div>
         <span>Sundries</span>
+        <div class="equipment-button-arrow"></div>
       </a>
     </div>
     <div id="equipment-sections-L" class="equipment-sections">
       <div class="equipment-wrap">
         <div class="equipment-section">
           <div class="equipment-header">
-            <img src="img/icon-3dprinting.png" style="width: 78px; height: 74px;">
+            <img class="equipment-header-icon" src="img/icon-3dprinting.png">
             <h3>3D Printers</h3>
             <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
           </div>
@@ -184,7 +219,7 @@ function hideMobileMenu() {
       <div class="equipment-wrap">
         <div class="equipment-section">
           <div class="equipment-header">
-            <img src="img/icon-vr.png" style="width: 102px; height: 69px;">
+            <img class="equipment-header-icon" src="img/icon-vr.png">
             <h3>VR</h3>
             <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
           </div>
@@ -194,7 +229,7 @@ function hideMobileMenu() {
       <div class="equipment-wrap">
         <div class="equipment-section">
           <div class="equipment-header">
-            <img src="img/icon-laser.png" style="width: 78px; height: 75px;">
+            <img class="equipment-header-icon" src="img/icon-laser.png">
             <h3>Laser Cutter</h3>
             <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
           </div>
@@ -206,7 +241,7 @@ function hideMobileMenu() {
       <div class="equipment-wrap">
         <div class="equipment-section">
           <div class="equipment-header">
-            <img src="img/icon-materials.png" style="width: 99px; height: 99px;">
+            <img class="equipment-header-icon" src="img/icon-materials.png">
             <h3>Materials</h3>
             <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
           </div>
@@ -216,7 +251,7 @@ function hideMobileMenu() {
       <div class="equipment-wrap">
         <div class="equipment-section">
           <div class="equipment-header">
-            <img src="img/icon-sewing.png" style="width: 93px; height: 80px;">
+            <img class="equipment-header-icon" src="img/icon-sewing.png">
             <h3>Sewing Machines</h3>
             <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
           </div>
@@ -226,7 +261,7 @@ function hideMobileMenu() {
       <div class="equipment-wrap">
         <div class="equipment-section">
           <div class="equipment-header">
-            <img src="img/icon-sundries.png" style="width: 86px; height: 88px;">
+            <img class="equipment-header-icon" src="img/icon-sundries.png">
             <h3>Sundries</h3>
             <a href="#" onclick="equipmentClose(this); return false;"><img src="img/button-close.png"></a>
           </div>
