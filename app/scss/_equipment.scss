@@ -14,9 +14,14 @@
     align-items: center;
     border-radius: 10px;
     border: 2px solid rgba(0,0,0,0);
-    box-shadow: 0 0 7px 7px rgba(0,0,0,0.2);
+    box-shadow: 0 0 43px 4px rgba(0,0,0,0.1);
     margin: 16px;
     padding: 10px;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      text-decoration: none;
+      transform: scale(1.03);
+    }
     .button-icon, span {
       margin: 10px;
     }
@@ -164,6 +169,14 @@ https://stackoverflow.com/a/43965099/509936
     #equipment-sections-R {
       grid-column: 1 / 2;
       grid-row: 4 / 5;
+    }
+    .equipment-button {
+      padding:4px;
+      margin:10px;
+      .button-icon {
+        width:50px;
+        margin:0px;
+      }
     }
   }
 }

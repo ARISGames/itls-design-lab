@@ -5,8 +5,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    font-size: 15px;
+    font-size: 11px;
     padding: 8px;
+    letter-spacing:2px;
+    text-transform: uppercase;
+    font-weight:600;
     a {
       margin-left: 12px;
       margin-right: 12px;
@@ -38,7 +41,7 @@
     background-color: white;
     margin: 15px;
     padding: 10px;
-    box-shadow: 0 0 5px 5px rgba(0,0,0,0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 43px 4px;
     .menu-top {
       display: flex;
       flex-direction: row;
@@ -62,7 +65,7 @@
 
   body.mobile-menu-open #menu, .mobile-menu-button a {
     margin: 15px;
-    box-shadow: 0 0 5px 5px rgba(0,0,0,0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 43px 4px;
     border-radius: 10px;
   }
 

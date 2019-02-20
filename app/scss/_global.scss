@@ -12,7 +12,7 @@ p {
   line-height: 1.8em;
 }
 
-h1, h2, h3, h4, h5, h6, nav {
+h1, h2, h3, h4, h5, h6, {
   font-family: League Spartan;
 }
 
@@ -26,13 +26,20 @@ a {
 .button {
   text-transform: uppercase;
   font-family: League Spartan;
-  font-weight: bold;
   color: $design-blue;
+  font-size:14px;
+  letter-spacing: 2px;
   border: 2px solid $design-blue;
   background-color: white;
   border-radius: 5px;
-  padding: 8px 15px;
+  padding: 6px 12px;
   padding-top: 12px;
   margin: 0;
   display: inline-block;
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    text-decoration:none;
+    color:#fff;
+    background: $design-blue;
+  }
 }

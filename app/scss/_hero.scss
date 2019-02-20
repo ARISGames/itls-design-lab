@@ -4,21 +4,26 @@
   background-image: url('../img/pattern.jpg');
   background-size: cover;
   background-position: center;
-  padding-left: 100px;
-  padding-top: 100px;
-  padding-bottom: 100px;
   color: $design-blue;
   font-weight: bold;
+  display:flex;
+  align-items: center;
+  background-attachment: fixed;
+  height:92vh;
   .hero-inner {
     background-color: white;
     display: flex;
     flex-direction: row;
     align-items: center;
+    height:auto;
+    width:80vw;
+    font-size:14px;
+    font-weight:400;
     h1, div {
       margin: 30px;
     }
     .hero-logo {
-      width: 50vw;
+      width: 40vw;
       max-width: 550px;
     }
   }
@@ -27,8 +32,9 @@
 @media screen and (max-width: 750px) {
   .hero {
     padding: 0;
-    margin-top: 40px;
+    background:#fff;
     .hero-inner {
+      width:100%;
       flex-direction: column;
       h1, div {
         margin: 5vw;
