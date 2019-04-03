@@ -29,19 +29,24 @@
     }
   }
 }
-
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 950px) {
+  .hero {
+    .hero-inner {
+      width:80vw;
+    }
+  }
+}
+@media screen and (max-width: 850px) {
   .hero {
     padding: 0;
-    background:#fff;
     .hero-inner {
-      width:100%;
       flex-direction: column;
+      padding:10px;
       h1, div {
         margin: 3vw;
       }
       .hero-logo {
-        max-width: none;
+        width:80%;
       }
     }
   }

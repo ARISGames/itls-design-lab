@@ -75,23 +75,26 @@
 @media screen and (max-width: 750px) {
   .what-happens {
     padding: 20px;
-    .what-happens-inner {
-      padding: 15px;
-      h2 {
-        text-align: center;
-      }
-      ul {
-        padding-left: 5px;
-        li {
-          display: flex;
-          align-items: baseline;
-          &:before {
-            transform: translate(0, 4px);
+    .what-happens-wrap {
+      width:90vw;
+      .what-happens-inner {
+        padding: 15px;
+        h2 {
+          text-align: center;
+        }
+        ul {
+          padding-left: 5px;
+          li {
+            display: flex;
+            align-items: baseline;
+            &:before {
+              transform: translate(0, 4px);
+            }
           }
         }
-      }
-      .lab-manager {
-        flex-direction: column;
+        .lab-manager {
+          flex-direction: column;
+        }
       }
     }
   }
