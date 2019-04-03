@@ -16,14 +16,15 @@
     flex-direction: row;
     align-items: center;
     height:auto;
-    width:80vw;
+    width:60vw;
     font-size:14px;
+    margin:0 auto;
     font-weight:400;
     h1, div {
       margin: 30px;
     }
     .hero-logo {
-      width: 40vw;
+      width: 31vw;
       max-width: 550px;
     }
   }
@@ -37,10 +38,9 @@
       width:100%;
       flex-direction: column;
       h1, div {
-        margin: 5vw;
+        margin: 3vw;
       }
       .hero-logo {
-        width: 100%;
         max-width: none;
       }
     }
