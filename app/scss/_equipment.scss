@@ -232,6 +232,12 @@ https://stackoverflow.com/a/43965099/509936
 }
 
 @media screen and (max-width: 800px) {
+  #equipment {
+    padding:0px;
+  }
+  .equipment-grid {
+    padding:30px;
+  }
   .equipment-item {
     flex-direction: column-reverse;
     align-items: center;
@@ -239,5 +245,11 @@ https://stackoverflow.com/a/43965099/509936
       width: 100%;
       max-width: 400px;
     }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .equipment-grid {
+    padding:0px !important;
   }
 }
