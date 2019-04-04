@@ -5,7 +5,7 @@
   https://www.456bereastreet.com/archive/201105/styling_ordered_list_numbers/
 */
 .get-started {
-  padding: 10vw;
+  padding: 5vw;
   ol {
     display: flex;
     counter-reset: li; /* Initiate a counter */
@@ -26,6 +26,7 @@
 @media screen and (min-width: 751px) {
   .get-started {
     color: $design-blue;
+    padding:10vw 15vw;
     h2 {
       text-align: center;
     }
