@@ -42,15 +42,16 @@
   }
 }
 
-.equipment-button-arrow {
+/*.equipment-button-arrow {
   display: none;
-  width: 26px;
-  height: 15.5px;
+  width: 36px;
+  height: 24px;
   background-image: url('../img/equipment-arrow.png');
   background-size: contain;
   position: absolute;
   top: 100%;
-}
+  margin-top:-7px;
+}*/
 
 .equipment-button-on {
   box-shadow: none !important;
