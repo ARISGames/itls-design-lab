@@ -8,7 +8,6 @@
   font-weight: bold;
   display:flex;
   align-items: center;
-  background-attachment: fixed;
   height:92vh;
   .hero-inner {
     background-color: white;
@@ -48,6 +47,16 @@
       }
       .hero-logo {
         width:80%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .hero {
+    .hero-inner {
+      .hero-logo {
+        width:100%;
       }
     }
   }
