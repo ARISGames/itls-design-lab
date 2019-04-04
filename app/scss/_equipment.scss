@@ -20,6 +20,7 @@
     margin: 16px;
     padding: 10px;
     transition: all 0.1s ease-in-out;
+    color:$design-blue;
     &:hover {
       text-decoration: none;
       transform: scale(1.03);
@@ -215,6 +216,13 @@ https://stackoverflow.com/a/43965099/509936
   }
   img {
     margin: 10px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .equipment-section {
+    padding-left:20px;
+    padding-right:20px;
   }
 }
 
