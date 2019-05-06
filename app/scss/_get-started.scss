@@ -6,6 +6,8 @@
 */
 .get-started {
   padding: 5vw;
+  border-top:5px solid $design-red;
+  margin-top:-1px;
   ol {
     display: flex;
     counter-reset: li; /* Initiate a counter */
@@ -61,7 +63,7 @@
 
 @media screen and (max-width: 750px) {
   .get-started {
-    background-color: rgb(54,19,197);
+    background-color: $design-blue;
     color: white;
     ol {
       flex-direction: column;
@@ -70,7 +72,7 @@
         width: 95%;
         border: none;
         height: 8px;
-        background-color: rgb(26,0,133);
+        background-color: $design-blue-dark;
         margin: 30px 0;
       }
       li {
